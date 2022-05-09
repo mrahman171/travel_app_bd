@@ -1,7 +1,14 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
+<<<<<<< HEAD
 import '/widgets/app_large_text.dart';
+=======
+import 'package:travel_app_bd/misc/colors.dart';
+import 'package:travel_app_bd/widgets/app_large_text.dart';
+import 'package:travel_app_bd/widgets/app_text.dart';
+import 'package:travel_app_bd/widgets/responsive_button.dart';
+>>>>>>> 7cc75a89c86e523092997c5df28c78aa32aaf556
 
 class WelcomePage extends StatefulWidget {
   @override
@@ -28,10 +35,26 @@ class _WelcomePageState extends State<WelcomePage> {
               margin: EdgeInsets.only(top: 150, left: 20, right: 20),
               child: Row(children: [
                 Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    AppLargetext(
-                      text: 'Trips',
-                    )
+                    AppLargetext(text: 'Trips'),
+                    Apptext(text: 'Mountain', size: 30),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    Container(
+                      width: 250,
+                      child: Apptext(
+                        text:
+                            "Mountian hikes give you an incredible sense of freedom along with endurance test",
+                        color: AppColors.textColor2,
+                        size: 14,
+                      ),
+                    ),
+                    SizedBox(
+                      height: 40,
+                    ),
+                    ResponsiveButton(),
                   ],
                 )
               ]),
