@@ -1,11 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
-import 'package:travel_app_bd/widgets/app_large_text.dart';
+import '/widgets/app_large_text.dart';
 
 class WelcomePage extends StatefulWidget {
-  const WelcomePage({super.key});
-
   @override
   State<WelcomePage> createState() => _WelcomePageState();
 }
