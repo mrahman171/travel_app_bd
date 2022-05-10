@@ -2,7 +2,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:travelapptest/misc/colors.dart';
 import 'package:travelapptest/widgets/app_large_text1.dart';
+import 'package:travelapptest/widgets/app_text.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -37,14 +39,14 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
             ),
           ),
           SizedBox(
-            height: 40,
+            height: 20,
           ),
           Container(
             margin: EdgeInsets.only(left: 28),
             child: AppLargetext(text: "Discover"),
           ),
           SizedBox(
-            height: 40,
+            height: 20,
           ),
           Container(
             child: Align(
@@ -56,6 +58,8 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                   unselectedLabelColor: Colors.grey,
                   isScrollable: true,
                   indicatorSize: TabBarIndicatorSize.label,
+                  indicator:
+                      CircleTabIndicatro(color: AppColors.mainColor, radius: 4),
                   tabs: [
                     Tab(
                       text: "Places",
@@ -70,13 +74,50 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
             ),
           ),
           Container(
-            height: 300,
+            padding: EdgeInsets.only(left: 20),
+            height: 250,
             width: double.maxFinite,
             child: TabBarView(controller: _tabController, children: [
-              Text('Hi'),
+              ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemCount: 3,
+                itemBuilder: (BuildContext context, int index) {
+                  return Container(
+                    margin: EdgeInsets.only(right: 15, top: 10),
+                    width: 200,
+                    height: 300,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      color: Colors.white,
+                      image: DecorationImage(
+                          image: AssetImage("img/mountain.jpeg"),
+                          fit: BoxFit.cover),
+                    ),
+                  );
+                },
+              ),
               Text('there'),
               Text('Bye'),
             ]),
+          ),
+          SizedBox(
+            height: 20,
+          ),
+          Container(
+            margin: EdgeInsets.only(left: 28, right: 20),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                AppLargetext(
+                  text: "Explore more",
+                  size: 22,
+                ),
+                Apptext(
+                  text: "See all",
+                  color: AppColors.textColor1,
+                )
+              ],
+            ),
           )
         ],
       ),
@@ -85,9 +126,29 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
 }
 
 class CircleTabIndicatro extends Decoration {
+  final Color color;
+  double radius;
+  CircleTabIndicatro({required this.color, required this.radius});
   @override
   BoxPainter createBoxPainter([VoidCallback? onChanged]) {
     // TODO: implement createBoxPainter
-    throw UnimplementedError();
+    return _CirclePainter(color: color, radius: radius);
+  }
+}
+
+class _CirclePainter extends BoxPainter {
+  final Color color;
+  double radius;
+  _CirclePainter({required this.color, required this.radius});
+  @override
+  void paint(Canvas canvas, Offset offset, ImageConfiguration configuration) {
+    Paint _paint = Paint();
+    _paint.color = color;
+    _paint.isAntiAlias = true;
+    final Offset circleOffset = Offset(
+        configuration.size!.width / 2 - radius / 2,
+        configuration.size!.height - radius);
+
+    canvas.drawCircle(offset + circleOffset, radius, _paint);
   }
 }
