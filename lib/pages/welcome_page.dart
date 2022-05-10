@@ -1,14 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
-import 'package:travel_app_bd/misc/colors.dart';
-import 'package:travel_app_bd/widgets/app_large_text.dart';
-import 'package:travel_app_bd/widgets/app_text.dart';
-import 'package:travel_app_bd/widgets/responsive_button.dart';
+import 'package:travelapptest/misc/colors.dart';
+import 'package:travelapptest/widgets/app_large_text1.dart';
+import 'package:travelapptest/widgets/app_text.dart';
+import 'package:travelapptest/widgets/responsive_button.dart';
 
 class WelcomePage extends StatefulWidget {
-  const WelcomePage({super.key});
-
   @override
   State<WelcomePage> createState() => _WelcomePageState();
 }
