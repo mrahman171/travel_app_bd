@@ -1,10 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
-import '../widgets/app_large_text.dart';
-import '../widgets/app_text.dart';
-import '../misc/colors.dart';
-import '../widgets/responsive_button.dart';
+import 'package:travelapptest/misc/colors.dart';
+import 'package:travelapptest/widgets/app_large_text1.dart';
+import 'package:travelapptest/widgets/app_text.dart';
+import 'package:travelapptest/widgets/responsive_button.dart';
 
 class WelcomePage extends StatefulWidget {
   @override
