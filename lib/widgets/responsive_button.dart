@@ -14,7 +14,10 @@ class ResponsiveButton extends StatelessWidget {
       height: 60,
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10), color: AppColors.mainColor),
-      child: Row(children: [Image.asset("img/button-one.png")]),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [Image.asset("img/button-one.png")],
+      ),
     );
   }
 }

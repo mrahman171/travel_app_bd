@@ -29,31 +29,47 @@ class _WelcomePageState extends State<WelcomePage> {
             ),
             child: Container(
               margin: EdgeInsets.only(top: 150, left: 20, right: 20),
-              child: Row(children: [
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+              child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    AppLargetext(text: 'Trips'),
-                    Apptext(text: 'Mountain', size: 30),
-                    SizedBox(
-                      height: 20,
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        AppLargetext(text: 'Trips'),
+                        Apptext(text: 'Mountain', size: 30),
+                        SizedBox(
+                          height: 20,
+                        ),
+                        Container(
+                          width: 250,
+                          child: Apptext(
+                            text:
+                                "Mountian hikes give you an incredible sense of freedom along with endurance test",
+                            color: AppColors.textColor2,
+                            size: 14,
+                          ),
+                        ),
+                        SizedBox(
+                          height: 40,
+                        ),
+                        ResponsiveButton(
+                          width: 100,
+                        ),
+                      ],
                     ),
-                    Container(
-                      width: 250,
-                      child: Apptext(
-                        text:
-                            "Mountian hikes give you an incredible sense of freedom along with endurance test",
-                        color: AppColors.textColor2,
-                        size: 14,
-                      ),
+                    Column(
+                      children: List.generate(3, (indexDots) {
+                        return Container(
+                          margin: const EdgeInsets.only(bottom: 8),
+                          width: 8,
+                          height: index == indexDots ? 25 : 8,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(8),
+                              color: AppColors.mainColor),
+                        );
+                      }),
                     ),
-                    SizedBox(
-                      height: 40,
-                    ),
-                    ResponsiveButton(),
-                  ],
-                )
-              ]),
+                  ]),
             ),
           );
         },
