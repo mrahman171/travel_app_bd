@@ -15,28 +15,43 @@ class MainPage extends StatefulWidget {
 
 class _MainPageState extends State<MainPage> {
   List pages = [HomePage(), BarItemPage(), SearchPage(), MyPage()];
+  int correntIndex = 0;
+  void OnTap(int index) {
+    setState(() {
+      correntIndex = index;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: pages[0],
-      bottomNavigationBar: BottomNavigationBar(items: [
-        BottomNavigationBarItem(
-          icon: Icon(Icons.apps),
-          label: 'Home',
-        ),
-        BottomNavigationBarItem(
-          icon: Icon(Icons.bar_chart_sharp),
-          label: 'Bar',
-        ),
-        BottomNavigationBarItem(
-          icon: Icon(Icons.search),
-          label: 'Search',
-        ),
-        BottomNavigationBarItem(
-          icon: Icon(Icons.person),
-          label: 'My',
-        )
-      ]),
+      bottomNavigationBar: BottomNavigationBar(
+          onTap: OnTap,
+          currentIndex: correntIndex,
+          selectedItemColor: Colors.black,
+          unselectedItemColor: Colors.grey.withOpacity(0.5),
+          showSelectedLabels: false,
+          showUnselectedLabels: false,
+          elevation: 0,
+          items: [
+            BottomNavigationBarItem(
+              icon: Icon(Icons.apps),
+              label: 'Home',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.bar_chart_sharp),
+              label: 'Bar',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.search),
+              label: 'Search',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.person),
+              label: 'My',
+            )
+          ]),
     );
   }
 }
