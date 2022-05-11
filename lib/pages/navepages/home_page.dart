@@ -14,6 +14,12 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
+  var images = {
+    "balloning.png": "Balloning",
+    "hiking.png": "Hiking",
+    "kayaking.png": "Kayaking",
+    "snorkling.png": "Snorkling"
+  };
   @override
   Widget build(BuildContext context) {
     TabController _tabController = TabController(length: 3, vsync: this);
@@ -22,7 +28,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
-            padding: EdgeInsets.only(top: 70, left: 28),
+            padding: EdgeInsets.only(top: 50, left: 28),
             child: Row(
               children: [
                 Icon(Icons.menu, size: 30, color: Colors.black54),
@@ -118,6 +124,50 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                 )
               ],
             ),
+          ),
+          SizedBox(
+            height: 15,
+          ),
+          Container(
+            height: 90,
+            width: double.maxFinite,
+            margin: EdgeInsets.only(left: 20),
+            child: ListView.builder(
+                itemCount: 4,
+                scrollDirection: Axis.horizontal,
+                itemBuilder: (_, index) {
+                  return Container(
+                    margin: EdgeInsets.only(right: 50),
+                    child: Column(
+                      children: [
+                        Container(
+                          // margin: EdgeInsets.only(
+                          //   right: 50,
+                          // ),
+                          width: 50,
+                          height: 50,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20),
+                            color: Colors.white,
+                            image: DecorationImage(
+                                image: AssetImage(
+                                    "img/" + images.keys.elementAt(index)),
+                                fit: BoxFit.cover),
+                          ),
+                        ),
+                        SizedBox(
+                          height: 5,
+                        ),
+                        Container(
+                          child: Apptext(
+                            text: images.values.elementAt(index),
+                            color: AppColors.textColor2,
+                          ),
+                        )
+                      ],
+                    ),
+                  );
+                }),
           )
         ],
       ),
