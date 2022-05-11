@@ -16,7 +16,7 @@ class ResponsiveButton extends StatelessWidget {
       padding: EdgeInsets.all(5),
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20), color: AppColors.mainColor),
-      child: Row(mainAxisAlignment: MainAxisAlignment.end, children: [
+      child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
         Image.asset("img/button-one.png"),
       ]),
     );
