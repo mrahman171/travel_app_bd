@@ -13,63 +13,84 @@ class WelcomePage extends StatefulWidget {
 }
 
 class _WelcomePageState extends State<WelcomePage> {
+  double selected_page(index, dotIndex) {
+    if (index == dotIndex) {
+      return 20;
+    } else {
+      return 8;
+    }
+  }
+
+  Color selected_color(index, dotIndex) {
+    if (index == dotIndex) {
+      return AppColors.mainColor.withOpacity(.9);
+    } else {
+      return AppColors.mainColor.withOpacity(.2);
+    }
+  }
+
   List images = ["welcome-one.png", "welcome-two.png", "welcome-three.png"];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: PageView.builder(
-            itemCount: images.length,
-            scrollDirection: Axis.vertical,
-            itemBuilder: (_, index) {
-              return Container(
-                width: double.maxFinite,
-                height: double.maxFinite,
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                    image: AssetImage('img/' + images[index]),
-                    fit: BoxFit.cover,
-                  ),
-                ),
-                child: Container(
-                  margin: EdgeInsets.only(top: 150, left: 20, right: 20),
-                  child: Row(
-                    children: [
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          AppLargetext(
-                            text: 'Trips',
-                            color: Colors.purple,
+      body: PageView.builder(
+        scrollDirection: Axis.vertical,
+        itemCount: 3,
+        itemBuilder: (_, index) {
+          return Container(
+            width: double.maxFinite,
+            height: double.maxFinite,
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                  image: AssetImage("img/" + images[index]), fit: BoxFit.cover),
+            ),
+            child: Container(
+              margin: EdgeInsets.only(top: 150, left: 20, right: 20),
+              child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        AppLargetext(text: 'Trips'),
+                        Apptext(text: 'Mountain', size: 30),
+                        SizedBox(
+                          height: 20,
+                        ),
+                        Container(
+                          width: 250,
+                          child: Apptext(
+                            text:
+                                "Mountian hikes give you an incredible sense of freedom along with endurance test",
+                            color: AppColors.textColor2,
+                            size: 14,
                           ),
-                          SizedBox(
-                            height: 5,
+                        ),
+                        SizedBox(
+                          height: 40,
+                        ),
+                        ResponsiveButton(
+                          width: 150,
+                        ),
+                      ],
+                    ),
+                    Column(
+                      children: List.generate(images.length, (dotIndex) {
+                        return Container(
+                          width: 8,
+                          height: selected_page(index, dotIndex),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(8),
+                            color: selected_color(index, dotIndex),
                           ),
-                          Apptext(
-                            text: 'Mountains',
-                            size: 30,
-                          ),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          Container(
-                            width: 250,
-                            child: Apptext(
-                              text:
-                                  'Mountain hikes gives you an incredible sense of freedom along with endurance test',
-                              color: AppColors.textColor2,
-                              size: 15,
-                            ),
-                          ),
-                          SizedBox(
-                            height: 20,
-                          ),
-                          ResponsiveButton()
-                        ],
-                      )
-                    ],
-                  ),
-                ),
-              );
-            }));
+                        );
+                      }),
+                    ),
+                  ]),
+            ),
+          );
+        },
+      ),
+    );
   }
 }
