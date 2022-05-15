@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:travelapptest/misc/colors.dart';
 import 'package:travelapptest/widgets/app_large_text1.dart';
+import 'package:travelapptest/widgets/app_text.dart';
 //ignore_for_file: prefer_const_constructors
 
 class Homepage extends StatefulWidget {
@@ -11,6 +13,14 @@ class Homepage extends StatefulWidget {
 }
 
 class _HomepageState extends State<Homepage> {
+  List places = ['mountain.jpeg', 'mountain2.jpg', 'mountain3.jpg'];
+
+  var images = {
+    'balloning.png': 'Balloning',
+    'hiking.png': 'hiking',
+    'kayaking.png': 'kayking',
+    'snorkling.png': 'snorkling'
+  };
   @override
   Widget build(BuildContext context) {
     //TabController _tabcontroller = TabController(length: 3, vsync: this);
@@ -38,7 +48,7 @@ class _HomepageState extends State<Homepage> {
             ),
           ),
           SizedBox(
-            height: 40,
+            height: 30,
           ),
           //discover text
           Row(
@@ -54,48 +64,162 @@ class _HomepageState extends State<Homepage> {
           ),
           //tapbar
           Container(
-              child: DefaultTabController(
-            length: 3,
-            child: Column(
-              children: [
-                Container(
-                  height: 30,
-                  width: double.maxFinite,
-                  child: Align(
-                    alignment: Alignment.centerLeft,
-                    child: TabBar(
-                      isScrollable: true,
-                      labelPadding:
-                          EdgeInsets.only(left: 20, right: 20, bottom: 10),
-                      labelColor: Colors.black,
-                      indicator: circulartabindicator(
-                          color: AppColors.mainColor, radius: 4),
+            child: DefaultTabController(
+              length: 3,
+              child: Column(
+                children: [
+                  SizedBox(
+                    height: 30,
+                    width: double.maxFinite,
+                    child: Align(
+                      alignment: Alignment.centerLeft,
+                      child: TabBar(
+                        isScrollable: true,
+                        labelPadding:
+                            EdgeInsets.only(left: 20, right: 20, bottom: 10),
+                        labelColor: Colors.black,
+                        indicator: circulartabindicator(
+                            color: AppColors.mainColor, radius: 4),
 
-                      unselectedLabelColor: Colors.grey.withOpacity(.7),
-                      //indicatorColor: Colors.amber,
+                        unselectedLabelColor: Colors.grey.withOpacity(.7),
+                        //indicatorColor: Colors.amber,
 
-                      tabs: const [
-                        Text('places'),
-                        Text('places'),
-                        Text('places')
+                        tabs: const [
+                          Text('places'),
+                          Text('places'),
+                          Text('places')
+                        ],
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 300,
+                    width: double.maxFinite,
+                    child: TabBarView(
+                      children: [
+                        SizedBox(
+                          width: double.maxFinite,
+                          height: 300,
+                          //padding: EdgeInsets.only(left: 20),
+                          child: ListView.builder(
+                            scrollDirection: Axis.horizontal,
+                            itemCount: 3,
+                            itemBuilder: (_, index) {
+                              return Container(
+                                width: 200,
+                                height: 300,
+                                margin: EdgeInsets.only(right: 10, top: 5),
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(20),
+                                  image: DecorationImage(
+                                      image: AssetImage('img/' + places[index]),
+                                      fit: BoxFit.cover),
+                                ),
+                              );
+                            },
+                          ),
+                        ),
+                        Container(
+                          width: double.maxFinite,
+                          height: 300,
+                          //padding: EdgeInsets.only(left: 20),
+                          child: ListView.builder(
+                            scrollDirection: Axis.horizontal,
+                            itemCount: 3,
+                            itemBuilder: (_, index) {
+                              return Container(
+                                width: 200,
+                                height: 300,
+                                margin: EdgeInsets.only(right: 10, top: 5),
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(20),
+                                  image: DecorationImage(
+                                      image: AssetImage('img/' + places[index]),
+                                      fit: BoxFit.cover),
+                                ),
+                              );
+                            },
+                          ),
+                        ),
+                        Container(
+                          width: double.maxFinite,
+                          height: 300,
+                          //padding: EdgeInsets.only(left: 20),
+                          child: ListView.builder(
+                            scrollDirection: Axis.horizontal,
+                            itemCount: 3,
+                            itemBuilder: (_, index) {
+                              return Container(
+                                width: 200,
+                                height: 300,
+                                margin: EdgeInsets.only(right: 10, top: 5),
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(20),
+                                  image: DecorationImage(
+                                      image: AssetImage('img/' + places[index]),
+                                      fit: BoxFit.cover),
+                                ),
+                              );
+                            },
+                          ),
+                        ),
                       ],
                     ),
                   ),
+                ],
+              ),
+            ),
+          ),
+          SizedBox(height: 20),
+
+          Container(
+            margin: EdgeInsets.only(left: 20, right: 20),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                AppLargetext(
+                  text: 'Explore more',
+                  size: 22,
                 ),
-                Container(
-                  height: 300,
-                  width: double.maxFinite,
-                  child: TabBarView(
-                    children: const [
-                      Icon(Icons.directions_car),
-                      Icon(Icons.directions_transit),
-                      Icon(Icons.directions_bike),
-                    ],
-                  ),
-                ),
+                Apptext(
+                  text: 'see all',
+                  color: AppColors.textColor1,
+                )
               ],
             ),
-          ))
+          ),
+          SizedBox(
+            height: 30,
+          ),
+          Container(
+            height: 140,
+            width: double.maxFinite,
+            child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemCount: images.length,
+                itemBuilder: (_, index) {
+                  return Column(children: [
+                    Container(
+                      width: 80,
+                      height: 80,
+                      margin: EdgeInsets.only(left: 0, right: 30),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        image: DecorationImage(
+                            image: AssetImage(
+                                'img/' + images.keys.elementAt(index)),
+                            fit: BoxFit.cover),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    Container(
+                      child: Apptext(text: images.values.elementAt(index)),
+                    )
+                  ]);
+                }),
+          )
         ],
       ),
     );

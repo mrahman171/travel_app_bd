@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:travelapptest/pages/navepages/main_page.dart';
-import './pages/welcome_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,7 +17,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.green,
       ),
-      home: main_page(),
+      home: const main_page(),
     );
   }
 }

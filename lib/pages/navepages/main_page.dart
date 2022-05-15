@@ -1,12 +1,10 @@
-import 'dart:ffi';
-
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:travelapptest/pages/navepages/bar_item_page.dart';
 import 'package:travelapptest/pages/navepages/home_page.dart';
 import 'package:travelapptest/pages/navepages/my_page.dart';
 import 'package:travelapptest/pages/navepages/search_page.dart';
 
+// ignore: camel_case_types
 class main_page extends StatefulWidget {
   const main_page({Key? key}) : super(key: key);
 
@@ -14,13 +12,13 @@ class main_page extends StatefulWidget {
   State<main_page> createState() => _main_pageState();
 }
 
+// ignore: camel_case_types
 class _main_pageState extends State<main_page> {
-  @override
   List pages = [
-    Homepage(),
-    baritempage(),
-    searchpage(),
-    mypage(),
+    const Homepage(),
+    const baritempage(),
+    const searchpage(),
+    const mypage(),
   ];
   int currentstate = 0;
   void onTap(int index) {
@@ -29,6 +27,7 @@ class _main_pageState extends State<main_page> {
     });
   }
 
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: pages[currentstate],
@@ -43,12 +42,16 @@ class _main_pageState extends State<main_page> {
           elevation: 0,
           selectedFontSize: 0,
           unselectedFontSize: 0,
+          // ignore: prefer_const_literals_to_create_immutables
           items: [
-            BottomNavigationBarItem(icon: Icon(Icons.apps), label: 'home'),
-            BottomNavigationBarItem(
+            const BottomNavigationBarItem(
+                icon: Icon(Icons.apps), label: 'home'),
+            const BottomNavigationBarItem(
                 icon: Icon(Icons.bar_chart_sharp), label: 'bar chart'),
-            BottomNavigationBarItem(icon: Icon(Icons.search), label: 'search'),
-            BottomNavigationBarItem(icon: Icon(Icons.person), label: 'person'),
+            const BottomNavigationBarItem(
+                icon: Icon(Icons.search), label: 'search'),
+            const BottomNavigationBarItem(
+                icon: Icon(Icons.person), label: 'person'),
           ]),
     );
   }

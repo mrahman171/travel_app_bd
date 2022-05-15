@@ -1,18 +1,19 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
-import 'package:flutter/src/widgets/framework.dart';
+// ignore: implementation_imports
 import 'package:travelapptest/misc/colors.dart';
 import 'package:travelapptest/widgets/app_large_text1.dart';
 import 'package:travelapptest/widgets/app_text.dart';
 import 'package:travelapptest/widgets/responsive_button.dart';
 
 class WelcomePage extends StatefulWidget {
+  const WelcomePage({Key? key}) : super(key: key);
+
   @override
   State<WelcomePage> createState() => _WelcomePageState();
 }
 
 class _WelcomePageState extends State<WelcomePage> {
+  // ignore: non_constant_identifier_names
   double selected_page(index, dotIndex) {
     if (index == dotIndex) {
       return 20;
@@ -21,6 +22,7 @@ class _WelcomePageState extends State<WelcomePage> {
     }
   }
 
+  // ignore: non_constant_identifier_names
   Color selected_color(index, dotIndex) {
     if (index == dotIndex) {
       return AppColors.mainColor.withOpacity(.9);
@@ -45,7 +47,7 @@ class _WelcomePageState extends State<WelcomePage> {
                   image: AssetImage("img/" + images[index]), fit: BoxFit.cover),
             ),
             child: Container(
-              margin: EdgeInsets.only(top: 150, left: 20, right: 20),
+              margin: const EdgeInsets.only(top: 150, left: 20, right: 20),
               child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -54,7 +56,7 @@ class _WelcomePageState extends State<WelcomePage> {
                       children: [
                         AppLargetext(text: 'Trips'),
                         Apptext(text: 'Mountain', size: 30),
-                        SizedBox(
+                        const SizedBox(
                           height: 20,
                         ),
                         Container(
@@ -66,7 +68,7 @@ class _WelcomePageState extends State<WelcomePage> {
                             size: 14,
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 40,
                         ),
                         ResponsiveButton(
