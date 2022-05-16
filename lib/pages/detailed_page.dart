@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:travelapptest/misc/colors.dart';
+import 'package:travelapptest/widgets/AppButtons.dart';
 import 'package:travelapptest/widgets/app_large_text1.dart';
 import 'package:travelapptest/widgets/app_text.dart';
 
@@ -14,6 +15,7 @@ class DetailPage extends StatefulWidget {
 
 class _DetailPageState extends State<DetailPage> {
   int gottenstar = 4;
+  int current_index = -1;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -136,10 +138,67 @@ class _DetailPageState extends State<DetailPage> {
                       text: 'Number of people in your group',
                       color: AppColors.mainColor,
                     ),
+                    SizedBox(
+                      height: 15,
+                    ),
+                    Row(
+                      children: List.generate(5, (index) {
+                        return GestureDetector(
+                          onTap: () {
+                            setState(() {
+                              current_index = index;
+                            });
+                          },
+                          child: Container(
+                            margin: EdgeInsets.only(right: 10),
+                            child: AppButton(
+                              size: 50,
+                              color: current_index == index
+                                  ? Colors.white
+                                  : Colors.black,
+                              backgroundcolor: current_index == index
+                                  ? Colors.black
+                                  : AppColors.buttonBackground,
+                              bordercolor: current_index == index
+                                  ? Colors.black
+                                  : AppColors.buttonBackground,
+                              text: (index + 1).toString(),
+                            ),
+                          ),
+                        );
+                      }),
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    AppLargetext(
+                      text: 'Description',
+                      color: Colors.black.withOpacity(0.8),
+                      size: 20,
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    Apptext(
+                        text:
+                            'You must go for a travel.Travels helps to get rid of pressure.Go to the mountains to see the nature')
                   ],
                 ),
               ),
             ),
+            Positioned(
+              bottom: 0,
+              child: Row(children: [
+                AppButton(
+                  size: 60,
+                  color: AppColors.textColor1,
+                  backgroundcolor: AppColors.buttonBackground,
+                  bordercolor: AppColors.textColor1,
+                  IsIcon: true,
+                  icon: Icons.favorite_border,
+                ),
+              ]),
+            )
           ],
         ),
       ),
