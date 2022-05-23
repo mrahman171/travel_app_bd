@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+// ignore: implementation_imports
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:travelapptest/misc/colors.dart';
+import 'package:travelapptest/widgets/app_text.dart';
 
 class ResponsiveButton extends StatelessWidget {
   bool? isResponsive;
@@ -10,15 +12,28 @@ class ResponsiveButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: width,
-      height: 60,
-      padding: EdgeInsets.all(5),
-      decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(20), color: AppColors.mainColor),
-      child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-        Image.asset("img/button-one.png"),
-      ]),
+    return Flexible(
+      child: Container(
+        width: width,
+        height: 60,
+        padding: EdgeInsets.all(5),
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(20),
+            color: AppColors.mainColor),
+        child: Row(
+            mainAxisAlignment: isResponsive == true
+                ? MainAxisAlignment.spaceAround
+                : MainAxisAlignment.center,
+            children: [
+              isResponsive == true
+                  ? Apptext(
+                      text: 'Book trip now',
+                      color: Colors.white,
+                    )
+                  : Container(),
+              Image.asset("img/button-one.png"),
+            ]),
+      ),
     );
   }
 }
