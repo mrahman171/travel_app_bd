@@ -7,7 +7,20 @@ packages:
       name: async
       url: "https://pub.dartlang.org"
     source: hosted
+<<<<<<< HEAD
+    version: "2.9.0"
+  bloc:
+    dependency: "direct dev"
+    description:
+      name: bloc
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "8.0.3"
+<<<<<<< HEAD
+=======
+=======
     version: "2.8.2"
+<<<<<<< HEAD
   bloc:
     dependency: "direct main"
     description:
@@ -15,6 +28,10 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "8.0.3"
+=======
+>>>>>>> c182c4fbfe743918517b501bee7dae5012156e3f
+>>>>>>> 9e863cd8b464f427080aa5cea771d5ec28cc64e1
+>>>>>>> b968b11d15e238ce6354bc74fd9f844a3d3452e8
   boolean_selector:
     dependency: transitive
     description:
@@ -58,7 +75,11 @@ packages:
     source: hosted
     version: "1.0.4"
   equatable:
+<<<<<<< HEAD
     dependency: "direct main"
+=======
+    dependency: "direct dev"
+>>>>>>> b968b11d15e238ce6354bc74fd9f844a3d3452e8
     description:
       name: equatable
       url: "https://pub.dartlang.org"
@@ -77,7 +98,11 @@ packages:
     source: sdk
     version: "0.0.0"
   flutter_bloc:
+<<<<<<< HEAD
     dependency: "direct main"
+=======
+    dependency: "direct dev"
+>>>>>>> b968b11d15e238ce6354bc74fd9f844a3d3452e8
     description:
       name: flutter_bloc
       url: "https://pub.dartlang.org"
@@ -95,6 +120,20 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  http:
+    dependency: "direct dev"
+    description:
+      name: http
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.13.4"
+  http_parser:
+    dependency: transitive
+    description:
+      name: http_parser
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "4.0.0"
   lints:
     dependency: transitive
     description:
@@ -136,7 +175,20 @@ packages:
       name: path
       url: "https://pub.dartlang.org"
     source: hosted
+<<<<<<< HEAD
+    version: "1.8.1"
+  provider:
+    dependency: transitive
+    description:
+      name: provider
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "6.0.2"
+<<<<<<< HEAD
+=======
+=======
     version: "1.8.0"
+<<<<<<< HEAD
   provider:
     dependency: transitive
     description:
@@ -144,6 +196,10 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "6.0.3"
+=======
+>>>>>>> c182c4fbfe743918517b501bee7dae5012156e3f
+>>>>>>> 9e863cd8b464f427080aa5cea771d5ec28cc64e1
+>>>>>>> b968b11d15e238ce6354bc74fd9f844a3d3452e8
   sky_engine:
     dependency: transitive
     description: flutter
@@ -190,7 +246,14 @@ packages:
       name: test_api
       url: "https://pub.dartlang.org"
     source: hosted
+<<<<<<< HEAD
+    version: "0.4.9"
+<<<<<<< HEAD
+=======
+=======
     version: "0.4.8"
+>>>>>>> c182c4fbfe743918517b501bee7dae5012156e3f
+>>>>>>> 9e863cd8b464f427080aa5cea771d5ec28cc64e1
   typed_data:
     dependency: transitive
     description:
@@ -206,5 +269,16 @@ packages:
     source: hosted
     version: "2.1.1"
 sdks:
-  dart: ">=2.16.2 <3.0.0"
+<<<<<<< HEAD
+  dart: ">=2.17.0-0 <3.0.0"
   flutter: ">=1.16.0"
+<<<<<<< HEAD
+=======
+=======
+  dart: ">=2.16.2 <3.0.0"
+<<<<<<< HEAD
+  flutter: ">=1.16.0"
+=======
+>>>>>>> c182c4fbfe743918517b501bee7dae5012156e3f
+>>>>>>> 9e863cd8b464f427080aa5cea771d5ec28cc64e1
+>>>>>>> b968b11d15e238ce6354bc74fd9f844a3d3452e8
