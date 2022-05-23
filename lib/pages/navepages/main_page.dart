@@ -1,61 +1,57 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:travelapptest/pages/navepages/bar_item_page.dart';
-import 'package:travelapptest/pages/navepages/home_page.dart';
+import 'package:travelapptest/pages/home_page.dart';
 import 'package:travelapptest/pages/navepages/my_page.dart';
 import 'package:travelapptest/pages/navepages/search_page.dart';
 
-class MainPage extends StatefulWidget {
-  const MainPage({Key? key}) : super(key: key);
+// ignore: camel_case_types
+class main_page extends StatefulWidget {
+  const main_page({Key? key}) : super(key: key);
 
   @override
-  State<MainPage> createState() => _MainPageState();
+  State<main_page> createState() => _main_pageState();
 }
 
-class _MainPageState extends State<MainPage> {
-  List pages = [HomePage(), BarItemPage(), SearchPage(), MyPage()];
-  int correntIndex = 0;
-  void OnTap(int index) {
+// ignore: camel_case_types
+class _main_pageState extends State<main_page> {
+  List pages = [
+    const Homepage(),
+    const baritempage(),
+    const searchpage(),
+    const mypage(),
+  ];
+  int currentstate = 0;
+  void onTap(int index) {
     setState(() {
-      correntIndex = index;
+      currentstate = index;
     });
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      body: pages[currentstate],
       backgroundColor: Colors.white,
-      body: pages[correntIndex],
       bottomNavigationBar: BottomNavigationBar(
-          unselectedFontSize: 0,
-          selectedFontSize: 0,
-          type: BottomNavigationBarType.fixed,
+          onTap: onTap,
+          type: BottomNavigationBarType.shifting,
           backgroundColor: Colors.white,
-          onTap: OnTap,
-          currentIndex: correntIndex,
+          currentIndex: currentstate,
           selectedItemColor: Colors.black,
-          unselectedItemColor: Colors.grey.withOpacity(0.5),
-          showSelectedLabels: false,
-          showUnselectedLabels: false,
+          unselectedItemColor: Colors.black.withOpacity(0.3),
           elevation: 0,
+          selectedFontSize: 0,
+          unselectedFontSize: 0,
+          // ignore: prefer_const_literals_to_create_immutables
           items: [
-            BottomNavigationBarItem(
-              icon: Icon(Icons.apps),
-              label: 'Home',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.bar_chart_sharp),
-              label: 'Bar',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.search),
-              label: 'Search',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.person),
-              label: 'My',
-            )
+            const BottomNavigationBarItem(
+                icon: Icon(Icons.apps), label: 'home'),
+            const BottomNavigationBarItem(
+                icon: Icon(Icons.bar_chart_sharp), label: 'bar chart'),
+            const BottomNavigationBarItem(
+                icon: Icon(Icons.search), label: 'search'),
+            const BottomNavigationBarItem(
+                icon: Icon(Icons.person), label: 'person'),
           ]),
     );
   }

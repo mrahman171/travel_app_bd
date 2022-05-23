@@ -1,15 +1,13 @@
-import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter/cupertino.dart';
 
-class BarItemPage extends StatelessWidget {
-  const BarItemPage({Key? key}) : super(key: key);
+class baritempage extends StatelessWidget {
+  const baritempage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
       child: Center(
-        child: Text('Baritem Page'),
+        child: Text('bar_item_page'),
       ),
     );
   }
