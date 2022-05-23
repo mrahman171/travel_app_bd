@@ -1,7 +1,10 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+<<<<<<< HEAD
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:travelapptest/cubit/app_cubit.dart';
+=======
+// ignore: implementation_imports
+>>>>>>> c182c4fbfe743918517b501bee7dae5012156e3f
 import 'package:travelapptest/misc/colors.dart';
 import 'package:travelapptest/widgets/app_large_text1.dart';
 import 'package:travelapptest/widgets/app_text.dart';
@@ -9,11 +12,31 @@ import 'package:travelapptest/widgets/responsive_button.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class WelcomePage extends StatefulWidget {
+  const WelcomePage({Key? key}) : super(key: key);
+
   @override
   State<WelcomePage> createState() => _WelcomePageState();
 }
 
 class _WelcomePageState extends State<WelcomePage> {
+  // ignore: non_constant_identifier_names
+  double selected_page(index, dotIndex) {
+    if (index == dotIndex) {
+      return 20;
+    } else {
+      return 8;
+    }
+  }
+
+  // ignore: non_constant_identifier_names
+  Color selected_color(index, dotIndex) {
+    if (index == dotIndex) {
+      return AppColors.mainColor.withOpacity(.9);
+    } else {
+      return AppColors.mainColor.withOpacity(.2);
+    }
+  }
+
   List images = ["welcome-one.png", "welcome-two.png", "welcome-three.png"];
   @override
   Widget build(BuildContext context) {
@@ -30,7 +53,7 @@ class _WelcomePageState extends State<WelcomePage> {
                   image: AssetImage("img/" + images[index]), fit: BoxFit.cover),
             ),
             child: Container(
-              margin: EdgeInsets.only(top: 150, left: 20, right: 20),
+              margin: const EdgeInsets.only(top: 150, left: 20, right: 20),
               child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -39,7 +62,7 @@ class _WelcomePageState extends State<WelcomePage> {
                       children: [
                         AppLargetext(text: 'Trips'),
                         Apptext(text: 'Mountain', size: 30),
-                        SizedBox(
+                        const SizedBox(
                           height: 20,
                         ),
                         Container(
@@ -51,9 +74,10 @@ class _WelcomePageState extends State<WelcomePage> {
                             size: 14,
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 40,
                         ),
+<<<<<<< HEAD
                         GestureDetector(
                           onTap: () {
                             BlocProvider.of<AppCubits>(context).getData();
@@ -68,20 +92,22 @@ class _WelcomePageState extends State<WelcomePage> {
                               ],
                             ),
                           ),
+=======
+                        ResponsiveButton(
+                          width: 150,
+>>>>>>> c182c4fbfe743918517b501bee7dae5012156e3f
                         ),
                       ],
                     ),
                     Column(
-                      children: List.generate(3, (indexDots) {
+                      children: List.generate(images.length, (dotIndex) {
                         return Container(
-                          margin: const EdgeInsets.only(bottom: 8),
                           width: 8,
-                          height: index == indexDots ? 25 : 8,
+                          height: selected_page(index, dotIndex),
                           decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(8),
-                              color: index == indexDots
-                                  ? AppColors.mainColor
-                                  : AppColors.mainColor.withOpacity(0.3)),
+                            borderRadius: BorderRadius.circular(8),
+                            color: selected_color(index, dotIndex),
+                          ),
                         );
                       }),
                     ),

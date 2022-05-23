@@ -1,16 +1,13 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 
-class SearchPage extends StatelessWidget {
-  const SearchPage({Key? key}) : super(key: key);
+// ignore: camel_case_types
+class searchpage extends StatelessWidget {
+  const searchpage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Center(
-        child: Text('Search Page'),
-      ),
+    return const Center(
+      child: Text('search page'),
     );
   }
 }

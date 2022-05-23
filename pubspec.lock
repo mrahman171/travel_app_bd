@@ -7,6 +7,7 @@ packages:
       name: async
       url: "https://pub.dartlang.org"
     source: hosted
+<<<<<<< HEAD
     version: "2.9.0"
   bloc:
     dependency: "direct dev"
@@ -15,6 +16,9 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "8.0.3"
+=======
+    version: "2.8.2"
+>>>>>>> c182c4fbfe743918517b501bee7dae5012156e3f
   boolean_selector:
     dependency: transitive
     description:
@@ -49,7 +53,7 @@ packages:
       name: collection
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.16.0"
+    version: "1.15.0"
   cupertino_icons:
     dependency: "direct main"
     description:
@@ -70,7 +74,7 @@ packages:
       name: fake_async
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.3.0"
+    version: "1.2.0"
   flutter:
     dependency: "direct main"
     description: flutter
@@ -129,7 +133,7 @@ packages:
       name: material_color_utilities
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.1.4"
+    version: "0.1.3"
   meta:
     dependency: transitive
     description:
@@ -150,6 +154,7 @@ packages:
       name: path
       url: "https://pub.dartlang.org"
     source: hosted
+<<<<<<< HEAD
     version: "1.8.1"
   provider:
     dependency: transitive
@@ -158,6 +163,9 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "6.0.2"
+=======
+    version: "1.8.0"
+>>>>>>> c182c4fbfe743918517b501bee7dae5012156e3f
   sky_engine:
     dependency: transitive
     description: flutter
@@ -169,7 +177,7 @@ packages:
       name: source_span
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.8.2"
+    version: "1.8.1"
   stack_trace:
     dependency: transitive
     description:
@@ -204,7 +212,11 @@ packages:
       name: test_api
       url: "https://pub.dartlang.org"
     source: hosted
+<<<<<<< HEAD
     version: "0.4.9"
+=======
+    version: "0.4.8"
+>>>>>>> c182c4fbfe743918517b501bee7dae5012156e3f
   typed_data:
     dependency: transitive
     description:
@@ -218,7 +230,11 @@ packages:
       name: vector_math
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.1.2"
+    version: "2.1.1"
 sdks:
+<<<<<<< HEAD
   dart: ">=2.17.0-0 <3.0.0"
   flutter: ">=1.16.0"
+=======
+  dart: ">=2.16.2 <3.0.0"
+>>>>>>> c182c4fbfe743918517b501bee7dae5012156e3f
