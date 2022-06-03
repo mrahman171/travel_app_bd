@@ -54,7 +54,9 @@ class _DetailPageState extends State<DetailPage> {
                 child: IconButton(
                   // ignore: prefer_const_constructors
                   icon: Icon(Icons.menu),
-                  onPressed: () {},
+                  onPressed: () {
+                    BlocProvider.of<AppCubit>(context).GoHome();
+                  },
                   color: Colors.white,
                 ),
               ),

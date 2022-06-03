@@ -34,13 +34,21 @@ class _WelcomePageState extends State<WelcomePage> {
     }
   }
 
-  List images = ["welcome-one.png", "welcome-two.png", "welcome-three.png"];
+  List Place_description = ["Mountain", "Sea", "Lake", "Waterfall", "Forest"];
+
+  List images = [
+    "welcome-one.png",
+    "welcome-two.png",
+    "welcome-three.png",
+    "welcome-four.png",
+    "welcome-five.png"
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: PageView.builder(
         scrollDirection: Axis.vertical,
-        itemCount: 3,
+        itemCount: images.length,
         itemBuilder: (_, index) {
           return Container(
             width: double.maxFinite,
@@ -57,8 +65,15 @@ class _WelcomePageState extends State<WelcomePage> {
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        AppLargetext(text: 'Trips'),
-                        Apptext(text: 'Mountain', size: 30),
+                        AppLargetext(
+                          text: 'Trips',
+                          color: index == 3 ? Colors.grey : Colors.black,
+                        ),
+                        Apptext(
+                          text: Place_description[index],
+                          size: 30,
+                          color: index == 3 ? Colors.grey : Colors.black,
+                        ),
                         const SizedBox(
                           height: 20,
                         ),

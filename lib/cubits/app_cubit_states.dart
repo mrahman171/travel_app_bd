@@ -36,3 +36,9 @@ class DetailState extends CubitStates {
   // TODO: implement props
   List<Object> get props => [index];
 }
+
+class GoHomeState extends CubitStates {
+  @override
+  // TODO: implement props
+  List<Object> get props => [];
+}

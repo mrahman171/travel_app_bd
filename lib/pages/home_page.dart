@@ -162,7 +162,7 @@ class _HomepageState extends State<Homepage> {
                               //padding: EdgeInsets.only(left: 20),
                               child: ListView.builder(
                                 scrollDirection: Axis.horizontal,
-                                itemCount: info.length,
+                                itemCount: 3,
                                 itemBuilder: (_, index) {
                                   return Container(
                                     width: 200,
