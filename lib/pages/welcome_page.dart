@@ -1,18 +1,12 @@
 import 'package:flutter/material.dart';
-<<<<<<< HEAD
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:travelapptest/cubit/app_cubit.dart';
-<<<<<<< HEAD
-=======
-=======
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:travelapptest/cubits/app_cubits.dart';
 // ignore: implementation_imports
->>>>>>> c182c4fbfe743918517b501bee7dae5012156e3f
->>>>>>> 9e863cd8b464f427080aa5cea771d5ec28cc64e1
 import 'package:travelapptest/misc/colors.dart';
 import 'package:travelapptest/widgets/app_large_text1.dart';
 import 'package:travelapptest/widgets/app_text.dart';
 import 'package:travelapptest/widgets/responsive_button.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:travelapptest/cubits/app_cubits.dart';
 
 class WelcomePage extends StatefulWidget {
   const WelcomePage({Key? key}) : super(key: key);
@@ -80,31 +74,20 @@ class _WelcomePageState extends State<WelcomePage> {
                         const SizedBox(
                           height: 40,
                         ),
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 9e863cd8b464f427080aa5cea771d5ec28cc64e1
                         GestureDetector(
                           onTap: () {
-                            BlocProvider.of<AppCubits>(context).getData();
+                            BlocProvider.of<AppCubit>(context).GetData();
                           },
                           child: Container(
                             width: 200,
                             child: Row(
                               children: [
                                 ResponsiveButton(
-                                  width: 100,
+                                  width: 150,
                                 )
                               ],
                             ),
                           ),
-<<<<<<< HEAD
-=======
-=======
-                        ResponsiveButton(
-                          width: 150,
->>>>>>> c182c4fbfe743918517b501bee7dae5012156e3f
->>>>>>> 9e863cd8b464f427080aa5cea771d5ec28cc64e1
                         ),
                       ],
                     ),
