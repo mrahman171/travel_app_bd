@@ -31,7 +31,8 @@ class LoadedState extends CubitStates {
 
 class DetailState extends CubitStates {
   int index;
-  DetailState(this.index);
+  DataModel state;
+  DetailState(this.index, this.state);
   @override
   // TODO: implement props
   List<Object> get props => [index];

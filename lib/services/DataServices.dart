@@ -4,7 +4,7 @@ import 'package:http/http.dart' as http;
 import 'package:travelapptest/model/DataModel.dart';
 
 class DataServices {
-  String BaseUrl = 'http://mark.bslmeiyu.com/api/getplaces';
+  String BaseUrl = 'https://travel-guide-bd-f5e64-default-rtdb.firebaseio.com/';
 
   Future<List<DataModel?>> getinfo() async {
     http.Response res = await http.get(Uri.parse(BaseUrl));

@@ -20,7 +20,7 @@ class AppCubit extends Cubit<CubitStates> {
   }
 
   void DetailedState(int index) {
-    emit(DetailState(index));
+    emit(DetailState(index, places));
   }
 
   void GoHome() {
